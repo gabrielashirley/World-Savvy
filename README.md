@@ -1,2 +1,2 @@
-# worldsavvy
-Alexa Skill For Kids
+# World Savvy
+An Amazon Alexa Skill for Kids
