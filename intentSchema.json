@@ -1,0 +1,144 @@
+{
+  "languageModel": {
+    "types": [
+      {
+        "name": "LIST_OF_ANSWERS",
+        "values": [
+          {
+            "id": "one",
+            "name": {
+              "value": "1",
+              "synonyms": [
+                "one"
+              ]
+            }
+          },
+          {
+            "id": "two",
+            "name": {
+              "value": "2",
+              "synonyms": [
+                "two"
+              ]
+            }
+          },
+          {
+            "id": "three",
+            "name": {
+              "value": "3",
+              "synonyms": [
+                "three"
+              ]
+            }
+          },
+          {
+            "id": "four",
+            "name": {
+              "value": "4",
+              "synonyms": [
+                "four"
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "intents": [
+      {
+        "name": "AMAZON.CancelIntent",
+        "samples": [
+          "cancel"
+        ]
+      },
+      {
+        "name": "AMAZON.HelpIntent",
+        "samples": [
+          "help"
+        ]
+      },
+      {
+        "name": "AMAZON.NoIntent",
+        "samples": [
+          "no"
+        ]
+      },
+      {
+        "name": "AMAZON.RepeatIntent",
+        "samples": [
+          "repeat"
+        ]
+      },
+      {
+        "name": "AMAZON.StartOverIntent",
+        "samples": [
+          "start over",
+          "start game",
+          "start ",
+          "new game",
+          "start new game"
+        ]
+      },
+      {
+        "name": "AMAZON.StopIntent",
+        "samples": [
+          "stop",
+          "exit",
+          "quit",
+          "cancel",
+          "end"
+        ]
+      },
+      {
+        "name": "AMAZON.YesIntent",
+        "samples": [
+          "yes",
+          "yeah",
+          "yup"
+        ]
+      },
+      {
+        "name": "AnswerIntent",
+        "samples": [
+          "{Answer}",
+          "the answer is {Answer}",
+          "my answer is {Answer}",
+          "is it {Answer}",
+          "{Answer} is my answer"
+        ],
+        "slots": [
+          {
+            "name": "Answer",
+            "type": "LIST_OF_ANSWERS"
+          }
+        ]
+      },
+      {
+        "name": "AnswerOnlyIntent",
+        "samples": [
+          "{Answer}"
+        ],
+        "slots": [
+          {
+            "name": "Answer",
+            "type": "LIST_OF_ANSWERS"
+          }
+        ]
+      },
+      {
+        "name": "DontKnowIntent",
+        "samples": [
+          "dunno",
+          "i don't know",
+          "don't know",
+          "skip",
+          "who knows",
+          "i don't know that one",
+          "i don't know this question",
+          "i don't know that"
+        ],
+        "slots": []
+      }
+    ],
+    "invocationName": "world savvy"
+  }
+}
