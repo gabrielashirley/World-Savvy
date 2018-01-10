@@ -4,13 +4,13 @@ const Alexa = require('alexa-sdk');
 const questions = require('./question');
 
 const ANSWER_COUNT = 4; // The number of possible answers per trivia question.
-const GAME_LENGTH = 10;  // The number of questions per trivia game.
+const GAME_LENGTH = 5;  // The number of questions per trivia game.
 const GAME_STATES = {
     TRIVIA: '_TRIVIAMODE', // Asking trivia questions.
     START: '_STARTMODE', // Entry point, start the game.
     HELP: '_HELPMODE', // The user is asking for help.
 };
-const APP_ID = 'amzn1.ask.skill.0992420f-022c-4130-86c1-941dc7009d86';
+const APP_ID = undefined;
 
 const speechConsCorrect = ["Booya", "Bingo", "Bravo", "All righty", "Hip hip hooray", "Hurray", "Phew", "Righto", "Way to go", "Well done", "Whee", "Woo hoo", "Yay", "Well done"];
 
@@ -166,16 +166,16 @@ function handleUserGuess(userGaveUp) {
         speechOutput = userGaveUp ? '' : this.t('ANSWER_IS_MESSAGE');
         speechOutput += speechOutputAnalysis + this.t('GAME_OVER_MESSAGE', currentScore.toString(), GAME_LENGTH.toString());
         var closing = ' Hope you enjoy playing with <prosody pitch="high" volume="loud">World Savvy!</prosody> Let\'s travel again next time!' + "<say-as interpret-as='interjection'> merci </say-as><break strength='strong'/>" + "<say-as interpret-as='interjection'> woo hoo </say-as>";
-        if (currentScore <= 3) {
+        if (currentScore <= 1) {
             speechOutput += ' You achieved baby traveler level!!! It\'s a big world out there, go explore it! You\'ll be surprised at how interesting it is to learn about all the other countries in the world.' + "<say-as interpret-as='interjection'> way to go </say-as><break strength='x-strong'/>" + closing;
         }
-        else if (currentScore <= 6) {
+        else if (currentScore <= 2) {
             speechOutput += ' You achieved teenage traveler level!!! You may have been around the block of a couple of times, but next time, try paying attention of what\'s around you.' + "<say-as interpret-as='interjection'> cheer up </say-as><break strength='x-strong'/>" + closing;
         }
-        else if (currentScore <= 8) {
+        else if (currentScore <= 4) {
             speechOutput += ' You achieved adult traveler level!!! Keep it up and you\'ll soon be the most well-traveled and cultured person around!' + "<say-as interpret-as='interjection'> bravo </say-as><break strength='x-strong'/>" + closing;
         }
-        else if (currentScore <= 10) {
+        else if (currentScore <= 5) {
             speechOutput += ' Congratulations!!! You achieved senior traveler level!!! You love learning about different countries and their cultures, good for you!' + "<say-as interpret-as='interjection'> well done </say-as><break strength='x-strong'/>" + closing;
         }
 
